@@ -1,0 +1,40 @@
+html{
+    background-color: #20222B;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+   margin: 30% auto;
+    width: 20%;
+}
+
+input.title {
+    color: white;
+    background-color: #343745;
+    padding: 8px;
+    border: none;
+}
+
+button {
+    background-color: #191919;
+    color: white;
+    border: none;
+    padding: 8px;
+}
+
+li {
+    background-color: #343745;
+    padding: 8px;
+}
+
+a.edit {
+    text-decoration: none;
+    color: #9c27b0;
+    transition: ease-in-out .3s;
+}
+
+a.edit:hover{
+    color: teal;
+}
