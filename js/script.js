@@ -37,3 +37,10 @@ function editText (arg) {
     afficherValeur()
 }
 
+
+useEventListerner("keydown", event => {
+    // If click on Enter
+    if (event.which === 13) {
+      addTodo()
+    }
+  })
