@@ -3,7 +3,13 @@ const todoList = []
 function enregistrerValeur () {
     const valeur = $('.title').val()
     todoList.push(valeur)
+    clearInput ()
     afficherValeur()
+    
+}
+
+function clearInput () {
+    $('.title').val("")
 }
 
 function afficherValeur (arg = null) {
