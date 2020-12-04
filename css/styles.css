@@ -25,11 +25,11 @@ button {
 }
 
 ul {
-    max-width: 50%;
+    max-width: 30%;
     margin: 1rem auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     ul {
         max-width: 80%;
     }
