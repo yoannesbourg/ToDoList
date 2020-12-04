@@ -40,15 +40,17 @@ li {
     margin-top: .5rem;
     padding: 8px;
     list-style: none;
+    display: flex;
+    justify-content: space-between;
 }
 
-a.edit {
+.edit a {
     text-decoration: none;
     color: #9c27b0;
     transition: ease-in-out .3s;
 }
 
-a.edit:hover{
+.edit a:hover{
     color: teal;
 }
 

@@ -2,9 +2,11 @@ const todoList = []
 
 function enregistrerValeur () {
     const valeur = $('.title').val()
-    todoList.push(valeur)
-    clearInput ()
-    afficherValeur()  
+    if (valeur.length > 0) {
+        todoList.push(valeur)
+        clearInput ()
+        afficherValeur()    
+    } 
 }
 
 function clearInput () {
@@ -21,9 +23,12 @@ function afficherValeur (arg = null) {
         } 
         else {
             $('#list').append(
-                `<li>${todoList[i]} 
-                <a class="edit" href="#" onclick="effacerToDo(${i})">X</a>
-                <a class="edit" href="#" onclick="afficherValeur(${i})"> E</a></li>`)
+                `<li>${todoList[i]}
+                <span class="edit"> 
+                <a  href="#" onclick="effacerToDo(${i})">X</a>
+                <a  href="#" onclick="afficherValeur(${i})"> E</a>
+                </span>
+                </li>`)
         }
     }
 }
