@@ -18,7 +18,7 @@ function afficherValeur (arg = null) {
     for (i = 0; i < todoList.length; i++){
         if (i === arg) {
             $('#list').append(
-                `<li><input type="text" class="input-edit" value="${todoList[i]}">
+                `<li><input type="text" class="input-edit" value="${todoList[i]}" onkeydown="pressEnterEdit(event)">
                 <button type="button" onclick="editText(${i})">Edit</button></li>`)
         } 
         else {
@@ -50,4 +50,9 @@ function pressEnter (e) {
         enregistrerValeur()
     }
 }
-   
+
+function pressEnterEdit (e) {
+    if (e.keyCode === 13) {
+        editText()
+    }
+}
