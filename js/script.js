@@ -18,7 +18,7 @@ function afficherValeur (arg = null) {
     for (i = 0; i < todoList.length; i++){
         if (i === arg) {
             $('#list').append(
-                `<li><input type="text" class="input-edit" value="${todoList[i]}" onkeydown="pressEnterEdit(event)">
+                `<li><input type="text" class="input-edit" value="${todoList[i]}" onkeydown="pressEnterEdit(event, ${i})">
                 <button type="button" onclick="editText(${i})">Edit</button></li>`)
         } 
         else {
@@ -40,6 +40,7 @@ function effacerToDo (arg) {
 }
 
 function editText (arg) {
+    console.log(todoList)
     const editedToDo = $('.input-edit').val()
     todoList.splice(arg, 1, editedToDo)
     afficherValeur()
@@ -51,8 +52,10 @@ function pressEnter (e) {
     }
 }
 
-function pressEnterEdit (e) {
+function pressEnterEdit (e, arg) {
     if (e.keyCode === 13) {
-        editText()
+        const editedToDo = $('.input-edit').val()
+        todoList.splice(arg, 1, editedToDo)
+        afficherValeur()
     }
 }
