@@ -20,6 +20,7 @@ function afficherValeur (arg = null) {
             $('#list').append(
                 `<li><input type="text" class="input-edit" value="${todoList[i]}" onkeydown="pressEnterEdit(event, ${i})">
                 <button type="button" onclick="editText(${i})">Edit</button></li>`)
+            $('.fake-body').attr('onclick','editText(' + i + ')')
         } 
         else {
             $('#list').append(
@@ -44,6 +45,7 @@ function editText (arg) {
     const editedToDo = $('.input-edit').val()
     todoList.splice(arg, 1, editedToDo)
     afficherValeur()
+    $('.fake-body').attr('onclick', '')
 }
 
 function pressEnter (e) {
