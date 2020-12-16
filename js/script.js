@@ -1,3 +1,5 @@
+
+
 const todoList = []
 
 function enregistrerValeur () {
@@ -18,14 +20,14 @@ function afficherValeur (arg = null) {
     for (i = 0; i < todoList.length; i++){
         if (i === arg) {
             $('#list').append(
-                `<li><input type="text" class="input-edit" value="${todoList[i]}" onkeydown="pressEnterEdit(event, ${i})">
+                `<li ><input type="text" class="input-edit" value="${todoList[i]}" onkeydown="pressEnterEdit(event, ${i})">
                 <button type="button" onclick="editText(${i})">Edit</button></li>`)
             $('.fake-body').attr('onclick','editText(' + i + ')')
         } 
         else {
             $('#list').append(
-                `<li>${todoList[i]}
-                <span class="edit"> 
+                `<li onclick="afficherValeur(${i})">${todoList[i]}
+                <span onclick="afficherValeur(${i})" class="edit"> 
                 <a  href="#" onclick="effacerToDo(${i})">X</a>
                 <a  href="#" onclick="afficherValeur(${i})"> E</a>
                 </span>
@@ -35,7 +37,7 @@ function afficherValeur (arg = null) {
 }
 
 function effacerToDo (arg) {
-    console.log('arg effacer' + arg)
+    console.log(arg)
     todoList.splice(arg, 1)
     afficherValeur()
 }
@@ -61,3 +63,18 @@ function pressEnterEdit (e, arg) {
         afficherValeur()
     }
 }
+
+//Remplacer attr onclik et JS dans HTML par des vrai .on click
+//Mettre onclick sur tout le DOM, si
+/*$('body).on('click', () => {
+    const button = $('button')
+
+    if (button.contains(event.target)) {
+        return
+    }
+})*/
+//si on clicke sur le bouton il se passe rien
+
+//si non tu faus ton action
+//console.log('clicked outside')
+
