@@ -3,12 +3,21 @@ html{
     color: white;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
-    height: 100%;
+ 
 }
 
 .container {
-    text-align: center;
-    margin-top: 20rem;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input.title {
@@ -16,18 +25,29 @@ input.title {
     background-color: #343745;
     padding: 8px;
     border: none;
+    width: 200px;
 }
 
 button {
-    background-color: #191919;
-    color: white;
     border: none;
-    padding: 8px;
+    outline: none;
 }
 
+.input-container .material-icons{
+    color: #343745;
+    transition: ease-in-out .2s;
+}
+
+.input-container .material-icons:hover{
+    color: black;
+    transform: scale(1.4);
+}
+
+
 ul {
-    max-width: 30%;
-    margin: 1rem auto;
+    width: 30%;
+    margin: 0 auto;
+    
 }
 
 @media (max-width: 968px) {
@@ -43,16 +63,23 @@ li {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    transition: ease-in-out .2s;
+    min-width: 200px;
+}
+
+li:hover{
+    transform: scale(1.1);
 }
 
 .edit a {
     text-decoration: none;
-    color: #9c27b0;
+    color: #bdbdbd;
     transition: ease-in-out .3s;
 }
 
 .edit a:hover{
-    color: teal;
+    color: white;
 }
 
 .fake-body {

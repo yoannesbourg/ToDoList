@@ -15,6 +15,13 @@ function clearInput () {
     $('.title').val("")
 }
 
+const todosElement = document.querySelectorAll("#list > li")
+//Remplacer afficherValeur en JavaScript
+/*for (i = 0; i < todosElement.length; i++) {
+    const todoElt = todosElement[i]
+    todoElt.addEventListener("click", (event) => console.log(event))
+}*/
+
 function afficherValeur (arg = null) {
     $('#list > li').remove();
     for (i = 0; i < todoList.length; i++){
@@ -26,10 +33,14 @@ function afficherValeur (arg = null) {
         } 
         else {
             $('#list').append(
-                `<li onclick="afficherValeur(${i})">${todoList[i]}
+                `<li id="${i}" onclick="afficherValeur(${i})">${todoList[i]}
                 <span onclick="afficherValeur(${i})" class="edit"> 
-                <a  href="#" onclick="effacerToDo(${i})">X</a>
-                <a  href="#" onclick="afficherValeur(${i})"> E</a>
+                <a  href="#" onclick="effacerToDo(${i})"><span class="material-icons">
+                delete
+                </span></a>
+                <a  href="#" onclick="afficherValeur(${i})"><span class="material-icons">
+                create
+                </span></a>
                 </span>
                 </li>`)
         }
@@ -77,4 +88,5 @@ function pressEnterEdit (e, arg) {
 
 //si non tu faus ton action
 //console.log('clicked outside')
+
 
